@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Dragon | Registration</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: 0.3s ease;
+        }
+
+        body {
+            background-color: #e8e8e8;
+            font-family: system-ui, "sans-serif";
+        }
+
+        @media screen and (max-width: 725px) {
+            body {
+                padding: 0 20px;
+            }
+        }
+
+        @media screen and (min-width: 726px) {
+            body {
+                padding: 0 100px;
+            }
+        }
+
+        @media screen and (min-width:1024px) {
+            body {
+                padding: 0 250px;
+            }
+        }
+
+        ::selection {
+            background-color: #4a14ac;
+            color: white;
+        }
+
+        .navigation-links {
+            font-size: 20px;
+            margin-top: 20px;
+            margin-bottom: 40px;
+        }
+
+        .navigation-links a {
+            margin: 0 10px;
+            color: #4a14ac;
+            text-decoration: none;
+        }
+
+        .navigation-links a:hover {
+            text-decoration: underline;
+        }
+
+        img {
+            object-fit: cover;
+            border-radius: 5%;
+            box-shadow: 0 15px 30px #00000030;
+        }
+
+        form {
+            padding: 20px;
+            background-color: #e8e8e8;
+            box-shadow: 0 20px 30px #00000030;
+            border-radius: 20px;
+            height: fit-content;
+            width: 100%;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        form:hover {
+            box-shadow: 0 20px 30px #00000050;
+        }
+
+        input {
+            border: none;
+            outline: none;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            height: 40px;
+            width: 100%;
+            background-color: transparent;
+            font-size: 15px;
+            padding-left: 10px;
+            padding-top: 2px;
+            margin-top: 20px;
+            appearance: none;
+            border-radius: 10px;
+            border: 2px solid #4a14ac50;
+            border-bottom: 4px solid #4a14ac50;
+        }
+
+        input[type="text"]::placeholder,
+        input[type="email"]::placeholder,
+        input[type="password"]::placeholder {
+            color: #4a14ac50;
+        }
+
+        input[type="text"]:hover::placeholder,
+        input[type="text"]:focus::placeholder,
+        input[type="email"]:hover::placeholder,
+        input[type="email"]:focus::placeholder,
+        input[type="password"]:hover::placeholder ,
+        input[type="password"]:focus::placeholder {
+            color: #4a14ac;
+            transition: 0.3s ease;
+        }
+
+        input[type="text"] {
+            margin-top: 0;
+        }
+        
+        input#password {
+            margin-top: 0;
+        }
+
+        input[type="text"]:focus,
+        input[type="text"]:hover,
+        input[type="email"]:focus,
+        input[type="email"]:hover,
+        input[type="password"]:focus,
+        input[type="password"]:hover {
+            border: 2px solid #4a14ac;
+            border-bottom: 4px solid #4a14ac;
+            box-shadow: 0 10px 20px #00000030;
+            scale: 1.02;
+        }
+
+        input[type="date"] {
+            height: 40px;
+            width: 100%;
+            background-color: transparent;
+            font-size: 15px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            padding: 0 10px;
+            appearance: none;
+            border-radius: 10px;
+            border: 2px solid #4a14ac50;
+            border-bottom: 4px solid #4a14ac50;
+        }
+
+        input[type="date"]:hover,
+        input[type="date"]:focus {
+            border: 2px solid #4a14ac;
+            border-bottom: 4px solid #4a14ac;
+            scale: 1.02;
+            box-shadow: 0 10px 20px #00000030;
+        }
+
+        input[type="date"]::-webkit-datetime-edit-fields-wrapper {
+            color: #4a14ac50;
+            transition: 0.3s ease;
+        }
+
+        input[type="date"]:hover::-webkit-datetime-edit-fields-wrapper,
+        input[type="date"]:focus::-webkit-datetime-edit-fields-wrapper {
+            color: #4a14ac;
+        }
+
+        input[type="date"]::-webkit-calendar-picker-indicator {
+            opacity: 0.5;
+            transition: 0.3s ease;
+        }
+
+        input[type="date"]:hover::-webkit-calendar-picker-indicator,
+        input[type="date"]:focus::-webkit-calendar-picker-indicator {
+            opacity: 1;
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            list-style: none;
+            color: #4a14ac50;
+            transition: 0.1s;
+        }
+
+        ul p {
+            transition: 0.2s;
+        }
+
+        ul p:hover {
+            color: #4a14ac;
+        }
+
+        ul li label {
+            transition: 0.2s;
+        }
+
+        ul li:hover  label {
+            color: #4a14ac;
+        }
+
+        ul li input:checked ~ label {
+            color: #4a14ac;
+        }
+
+        ul div {
+            display: flex;
+            align-items: center;
+        }
+
+        input[type="submit"] {
+            height: 40px;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 5px;
+            background-color: #4a14ac80;
+            color: #e8e8e8;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover,
+        input[type="submit"]:focus {
+            background-color: #4a14ac;
+            scale: 1.02;
+        }
+
+        input[type="reset"] {
+            height: 40px;
+            width: 100%;
+            margin-top: 20px;
+            border-radius: 5px;
+            background-color: transparent;
+            color: #4a14ac80;
+            font-weight: bold;
+            border: 2px solid #4a14ac80;
+            cursor: pointer;
+        }
+
+        input[type="reset"]:hover,
+        input[type="reset"]:focus {
+            border: 2px solid #4a14ac;
+            color: #4a14ac;
+            scale: 1.02;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <center>
+
+        <p class="navigation-links">
+            <a href="Home.html">Home</a>
+            <a href="About.html">About</a>
+            <a href="Courses.html">Courses</a>
+            <a href="Contact.html">Contact</a>
+            <a
+                href="https://docs.google.com/forms/d/e/1FAIpQLSc8RKO3xx2xoru7Ej_JdTmFKov2EldfNbFU-bOum7cruGjSNg/viewform?usp=dialog">Register</a>
+        </p>
+
+        <h3>Registration Page</h3>
+
+        <form>
+            <input type="text" name="name" id="name" placeholder="Name" required>
+            <br>
+            <input type="email" name="email" id="email" placeholder="Email ID" required>
+            <br>
+            <input type="date" name="dob" id="dob" required>
+            <br>
+            <ul>
+                <p>Gender:</p>
+                <li>
+                    <input type="radio" name="gender" id="male" required>
+                    <label for="male">Male</label>
+                </li>
+                <li>
+                    <input type="radio" name="gender" id="female" required>
+                    <label for="female">Female</label>
+                </li>
+                <li>
+                    <input type="radio" name="gender" id="other" value="Other" required>
+                    <label for="other">Prefer Not to Say</label>
+                </li>
+            </ul>
+            <br>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <br>
+            <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password" required>
+            <br>
+            <input type="submit" value="Submit">
+            <br>
+            <input type="reset" value="Reset">
+        </form>
+
+    </center>
+
+</body>
+
+</html>
